@@ -1,0 +1,25 @@
+{
+  "name": "new-javascript-app",
+  "version": "1.0.0",
+  "description": "A simple npm command that will let you create vanilla js app boilerplate",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akshayraichur/create-javascript-app.git"
+  },
+  "keywords": [
+    "npm",
+    "javascript",
+    "boilerplate",
+    "webapp"
+  ],
+  "author": "Akshay Raichur <akshay.raichur9@gmail.com> (https://akshayraichur.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akshayraichur/create-javascript-app/issues"
+  },
+  "homepage": "https://github.com/akshayraichur/create-javascript-app#readme"
+}
