@@ -4,8 +4,9 @@
   "description": "A simple npm command that will let you create vanilla js app boilerplate",
   "main": "src/index.js",
   "bin": "./bin/cli.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node bin/cli.js name"
   },
   "repository": {
     "type": "git",
@@ -15,12 +16,21 @@
     "npm",
     "javascript",
     "boilerplate",
-    "webapp"
+    "webapp",
+    "js",
+    "starter",
+    "template",
+    "html",
+    "css"
   ],
   "author": "Akshay Raichur <akshay.raichur9@gmail.com> (https://akshayraichur.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/akshayraichur/create-javascript-app/issues"
   },
-  "homepage": "https://github.com/akshayraichur/create-javascript-app#readme"
+  "homepage": "https://github.com/akshayraichur/create-javascript-app#readme",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "commander": "^9.4.0"
+  }
 }
