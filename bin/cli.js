@@ -40,10 +40,7 @@ log();
 const COMMANDS_TO_RUN = {
   CLONE: `git clone --dept 1 https://github.com/akshayraichur/js-app-template.git ${dirName}`,
   MOVE: `cd ${dirName}`,
-  REMOVE_GIT:
-    platform === 'Windows'
-      ? `cd ${dirName} && del .git`
-      : 'cd ${dirName} && rm -rf .git',
+  REMOVE_GIT: `cd ${dirName} && npx rimraf ./.git`,
   INITIALIZE_GIT: `cd ${dirName} && git init`,
   BRANCH_CHANGE: `cd ${dirName} && git branch -m main`,
 };
@@ -60,35 +57,38 @@ if (!moveToDir) process.exit(-1);
 // remove git from cloned repo
 const removeGit = runCommand(COMMANDS_TO_RUN.REMOVE_GIT);
 if (!removeGit) {
-  console.log(
+  log(
     red(
       'we could not remove git from this repo to re-initialize, please do it manually'
     )
   );
+} else {
+  log(green('Uninitialized git from project.'));
+  log();
 }
 
 // Initialize new git repo
 const checkGitInitialization = runCommand(COMMANDS_TO_RUN.INITIALIZE_GIT);
 if (!checkGitInitialization)
-  console.log(red('we could not initialize git, please do it manually'));
+  log(red('we could not initialize git, please do it manually'));
 else {
-  console.log(green('git iitialized'));
+  log(green('git initialized'));
 }
 
 // change branch name to main
 const checkChangeBranch = runCommand(COMMANDS_TO_RUN.BRANCH_CHANGE);
 if (!checkChangeBranch)
-  console.log(
+  log(
     red(
       'we could not change git branch to main from master, please do it manually'
     )
   );
 else {
-  console.log(green('git branch changed from master to main'));
+  log(green('git branch changed from master to main'));
 }
 
 log();
-console.log(
+log(
   `Congratulations! You are ready. Follow the commands to start the project. `
 );
-console.log(`cd ${dirName} && npm start`); // TODO: subject to change
+log(`cd ${dirName} && npm start`); // TODO: subject to change
