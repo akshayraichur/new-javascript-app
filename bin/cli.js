@@ -40,9 +40,12 @@ log();
 const COMMANDS_TO_RUN = {
   CLONE: `git clone --dept 1 https://github.com/akshayraichur/js-app-template.git ${dirName}`,
   MOVE: `cd ${dirName}`,
-  REMOVE_GIT: platform === 'Windows' ? `del .git` : 'rm -rf .git',
-  INITIALIZE_GIT: `git init`,
-  BRANCH_CHANGE: `git branch -m main`,
+  REMOVE_GIT:
+    platform === 'Windows'
+      ? `cd ${dirName} && del .git`
+      : 'cd ${dirName} && rm -rf .git',
+  INITIALIZE_GIT: `cd ${dirName} && git init`,
+  BRANCH_CHANGE: `cd ${dirName} && git branch -m main`,
 };
 
 console.log(`Cloning the repo with name ${dirName}`);
